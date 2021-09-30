@@ -1,1 +1,20 @@
-colocar manifesto aqui
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversao-peso
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: peso
+  template:
+  	metadata: 
+  	  name: conversaoPeso
+  	  labels: 
+  	    app: peso
+  	spec: 
+      containers:
+        - name: peso
+          image: marcelobh89/conversao-peso:latest
+        ports:
+          -containerport: 80
