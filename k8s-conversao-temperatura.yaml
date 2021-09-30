@@ -1,1 +1,20 @@
-colocar manifesto aqui
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversao-temperatura
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: temperatura
+  template:
+  	metadata: 
+  	  name: conversaoTemperatura
+  	  labels: 
+  	    app: temperatura
+  	spec: 
+      containers:
+        - name: temperatura
+          image: marcelobh89/conversao-temperatura:latest
+        ports:
+          -containerport: 8080
