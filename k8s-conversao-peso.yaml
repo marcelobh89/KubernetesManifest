@@ -17,4 +17,7 @@ spec:
         - name: peso
           image: marcelobh89/conversao-peso:latest
           ports:
-          - containerPort: 80
+            - containerPort: 80
+              protocol: TCP
+              name: http
+          type: NodePort
