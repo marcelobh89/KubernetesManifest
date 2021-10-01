@@ -68,7 +68,6 @@ spec:
               value: "mongouser"
             - name: MONGODB_PASSWORD
               value: "mongopwd"
-							
 ---
 #Service da Aplicação
 apiVersion: v1
@@ -84,4 +83,3 @@ spec:
       nodePort: 30000
   type:
     NodePort
-	
